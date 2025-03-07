@@ -15,7 +15,6 @@ helm install d2m d2m/d2m
 ### Get the node public IP
 - Get the pod's node: `kubectl describe pod d2m-kubedoom`
 - Get the public IP: `kubectl get node NODE -o jsonpath="{.status.addresses[?(@.type=='ExternalIP')].address}"`
-```
 
 ### Install VNC Client
 We recommend installing [TigerVNC](https://tigervnc.org/), but any modern VNC client should work.

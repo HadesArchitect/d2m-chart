@@ -5,6 +5,14 @@ kubedoom:
     image:
       repository: ghcr.io/storax/kubedoom
       tag: latest
+  novnc:
+    env:
+      autoconnect: "true"
+      vncPassword: idbehold
+      vncServer: localhost:5900
+    image:
+      repository: bonigarcia/novnc
+      tag: 1.2.0
   replicas: 1
   serviceAccount:
     annotations: {}

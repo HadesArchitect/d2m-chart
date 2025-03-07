@@ -26,4 +26,16 @@ spec:
           name: kubedoom
           ports:
             - containerPort: 5900
-              name: vnc
+              name: vnc-server
+        - image: bonigarcia/novnc:1.2.0
+          env:
+            - name: AUTOCONNECT
+              value: 'true'
+            - name: VNC_PASSWORD
+              value: idbehold
+            - name: VNC_SERVER
+              value: localhost:5900
+          name: novnc
+          ports:
+            - containerPort: 6080
+              name: vnc-client

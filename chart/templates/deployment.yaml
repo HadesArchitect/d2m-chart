@@ -28,7 +28,23 @@ spec:
         name: kubedoom
         ports:
         - containerPort: 5900
-          name: vnc
+          name: vnc-server
+        resources: {}
+      - env:
+        - name: AUTOCONNECT
+          value: {{ quote .Values.kubedoom.novnc.env.autoconnect }}
+        - name: VNC_PASSWORD
+          value: {{ quote .Values.kubedoom.novnc.env.vncPassword }}
+        - name: VNC_SERVER
+          value: {{ quote .Values.kubedoom.novnc.env.vncServer }}
+        - name: KUBERNETES_CLUSTER_DOMAIN
+          value: {{ quote .Values.kubernetesClusterDomain }}
+        image: {{ .Values.kubedoom.novnc.image.repository }}:{{ .Values.kubedoom.novnc.image.tag
+          | default .Chart.AppVersion }}
+        name: novnc
+        ports:
+        - containerPort: 6080
+          name: vnc-client
         resources: {}
       hostNetwork: true
       serviceAccountName: {{ include "d2m.fullname" . }}-kubedoom

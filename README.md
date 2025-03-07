@@ -13,9 +13,8 @@ helm install d2m d2m/d2m
 ```
 
 ### Get the node public IP
-```
-kubectl describe pod d2m-kubedoom 
-kubectl get node YOURNODENAME -o jsonpath="{.status.addresses[2].address}"
+- Get the pod's node: `kubectl describe pod d2m-kubedoom`
+- Get the public IP: `kubectl get node NODE -o jsonpath="{.status.addresses[?(@.type=='ExternalIP')].address}"`
 ```
 
 ### Install VNC Client

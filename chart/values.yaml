@@ -1,0 +1,11 @@
+kubedoom:
+  kubedoom:
+    env:
+      namespace: default
+    image:
+      repository: ghcr.io/storax/kubedoom
+      tag: latest
+  replicas: 1
+  serviceAccount:
+    annotations: {}
+kubernetesClusterDomain: cluster.local

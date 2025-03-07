@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  d2m:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2025-03-07T10:58:12.506432+07:00"
+    description: A Helm chart for Doom in K8s
+    digest: 37a938c7dffaec6310911fd2b78ca9035ae1d1be00894727f3cfd5e7375fea64
+    name: d2m
+    type: application
+    urls:
+    - d2m-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-03-07T10:58:12.505991+07:00"

@@ -12,12 +12,11 @@ helm repo add d2m https://hadesarchitect.github.io/d2m-chart/
 helm install d2m d2m/d2m
 ```
 
-### Get the node public IP
+### Connect and go!
 - Get the pod's node: `kubectl describe pod d2m-kubedoom`
 - Get the public IP: `kubectl get node NODE -o jsonpath="{.status.addresses[?(@.type=='ExternalIP')].address}"`
 
-### Connect and go!
-Open that IP in a browser using port `6080`. Have fun!
+**Open that IP in a browser using port `6080`. Have fun!**
 
 ## Todo
 Nice-to-have ideas that weren't implemented because of time restrictions
